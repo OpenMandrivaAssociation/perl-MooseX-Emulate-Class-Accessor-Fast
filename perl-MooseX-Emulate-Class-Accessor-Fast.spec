@@ -15,6 +15,7 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: perl-devel
 BuildRequires: perl(Moose)
 BuildRequires: perl(Test::Exception)
+BuildRequires: perl(namespace::clean)
 
 
 BuildArch: noarch
