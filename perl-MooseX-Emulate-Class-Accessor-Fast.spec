@@ -1,24 +1,21 @@
+%define upstream_name    MooseX-Emulate-Class-Accessor-Fast
+%define upstream_version 0.00900
 
-%define realname   MooseX-Emulate-Class-Accessor-Fast
-%define version    0.00802
-%define release    %mkrel 1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
+License:    GPL+ or Artistic
 Group:      Development/Perl
 Summary:    Emulate Class::Accessor::Fast behavior using Moose attributes
-Source:     http://www.cpan.org/modules/by-module/MooseX/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/MooseX/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Moose)
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(namespace::clean)
-
-
 BuildArch: noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module attempts to hijack the Class::Accessor::Fast manpage in %INC
@@ -29,12 +26,8 @@ project from the Class::Accessor::Fast manpage, to the
 MooseX::Emulate::Class::Accessor::Fast manpage and ultimately, to the Moose
 manpage.
 
-
-
-
-
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
