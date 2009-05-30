@@ -4,6 +4,7 @@
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
 Release:    %mkrel 1
+Epoch:      1
 
 License:    GPL+ or Artistic
 Group:      Development/Perl
