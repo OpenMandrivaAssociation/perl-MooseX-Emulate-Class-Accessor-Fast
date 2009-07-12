@@ -1,5 +1,5 @@
 %define upstream_name    MooseX-Emulate-Class-Accessor-Fast
-%define upstream_version 0.00900
+%define upstream_version 0.00902
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
