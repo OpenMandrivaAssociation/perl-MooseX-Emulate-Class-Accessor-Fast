@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    3
 Epoch:      1
 
 License:    GPL+ or Artistic
@@ -15,8 +15,8 @@ Source0:    http://www.cpan.org/modules/by-module/MooseX/%{upstream_name}-%{upst
 BuildRequires: perl(Moose)
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(namespace::clean)
+BuildRequires: perl-devel
 BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module attempts to hijack the Class::Accessor::Fast manpage in %INC
@@ -38,16 +38,43 @@ manpage.
 make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
 
+
+
+
+%changelog
+* Mon Apr 18 2011 Funda Wang <fwang@mandriva.org> 1:0.9.30-2mdv2011.0
++ Revision: 655063
+- rebuild for updated spec-helper
+
+* Wed Sep 16 2009 Jérôme Quelin <jquelin@mandriva.org> 1:0.9.30-1mdv2011.0
++ Revision: 443470
+- update to 0.00903
+
+* Sun Jul 12 2009 Jérôme Quelin <jquelin@mandriva.org> 1:0.9.20-1mdv2010.0
++ Revision: 395169
+- update to 0.00902
+
+* Sat May 30 2009 Jérôme Quelin <jquelin@mandriva.org> 1:0.9.0-1mdv2010.0
++ Revision: 381276
+- adding epoch: tag to make sure %%perl_convert_version gets priority
+- update to 0.90000
+- using %%perl_convert_version
+- sanitized license field & description fields
+
+* Fri May 15 2009 Jérôme Quelin <jquelin@mandriva.org> 0.00802-1mdv2010.0
++ Revision: 376180
+- adding missing buildrequires:
+- adding missing buildrequires
+- import perl-MooseX-Emulate-Class-Accessor-Fast
+
+
+* Fri May 15 2009 cpan2dist 0.00802-1mdv
+- initial mdv release, generated with cpan2dist
 
