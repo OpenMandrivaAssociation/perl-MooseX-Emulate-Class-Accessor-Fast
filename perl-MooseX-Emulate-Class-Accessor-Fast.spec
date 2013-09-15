@@ -19,7 +19,7 @@ BuildRequires: perl-devel
 BuildArch: noarch
 
 %description
-This module attempts to hijack the Class::Accessor::Fast manpage in %INC
+This module attempts to hijack the Class::Accessor::Fast manpage in INC
 and replace it with the MooseX::Emulate::Class::Accessor::Fast manpage.
 Make sure it is loaded before the classes you have that use
 <Class::Accessor::Fast>. It is meant as a tool to help you migrate your
