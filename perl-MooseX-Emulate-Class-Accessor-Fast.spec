@@ -1,16 +1,16 @@
 %define upstream_name    MooseX-Emulate-Class-Accessor-Fast
-%define upstream_version 0.00903
+%define upstream_version 0.009032
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    5
+Version:    %{upstream_version}
+Release:    1
 Epoch:      1
 
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Summary:    Emulate Class::Accessor::Fast behavior using Moose attributes
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/MooseX/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://github.com/moose/MooseX-Emulate-Class-Accessor-Fast
+Source0:    https://cpan.metacpan.org/authors/id/H/HA/HAARG/MooseX-Emulate-Class-Accessor-Fast-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires: perl(Moose)
