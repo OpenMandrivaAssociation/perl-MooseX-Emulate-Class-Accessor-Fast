@@ -1,16 +1,14 @@
 %define upstream_name    MooseX-Emulate-Class-Accessor-Fast
-%define upstream_version 0.009032
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:    1
+Version:    0.009032
+Release:    2
 Epoch:      1
 
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Summary:    Emulate Class::Accessor::Fast behavior using Moose attributes
 Url:        https://github.com/moose/MooseX-Emulate-Class-Accessor-Fast
-Source0:    https://cpan.metacpan.org/authors/id/H/HA/HAARG/MooseX-Emulate-Class-Accessor-Fast-%{upstream_version}.tar.gz
+Source0:    https://cpan.metacpan.org/authors/id/H/HA/HAARG/MooseX-Emulate-Class-Accessor-Fast-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires: perl(Moose)
@@ -29,7 +27,7 @@ MooseX::Emulate::Class::Accessor::Fast manpage and ultimately, to the Moose
 manpage.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%setup -q -n %{upstream_name}-%{version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -64,10 +62,9 @@ make test
 
 * Sat May 30 2009 Jérôme Quelin <jquelin@mandriva.org> 1:0.9.0-1mdv2010.0
 + Revision: 381276
-- adding epoch: tag to make sure %%perl_convert_version gets priority
+- adding epoch: tag to make sure %0.009032 priority
 - update to 0.90000
-- using %%perl_convert_version
-- sanitized license field & description fields
+- using %0.009032 sanitized license field & description fields
 
 * Fri May 15 2009 Jérôme Quelin <jquelin@mandriva.org> 0.00802-1mdv2010.0
 + Revision: 376180
